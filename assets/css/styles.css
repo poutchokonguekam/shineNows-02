@@ -390,3 +390,42 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     padding: 20px;                 /* espace autour des logos */
     border-radius: 6px;
 }
+
+/* --- Cards Metallic Premium --- */
+.card {
+    background: #d9d8d4 !important;         /* Fond métallique */
+    color: #050A14 !important;              /* Texte sombre visible */
+    padding: 35px;
+    min-height: 500px;                      /* Plus haut, premium */
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);      /* Bordure légère */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22); /* Effet métal */
+}
+
+/* Image logo non coupée + centrée */
+.card img {
+    height: 260px !important;
+    object-fit: contain !important;
+    background: transparent;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* Réajustement des titres */
+.card h3 {
+    color: #050A14;                          /* titre sombre lisible */
+}
+
+/* Réajustement des liens */
+.card-link {
+    color: #D4AF37 !important; /* or premium */
+    text-decoration: underline;
+}
+
+/* Espacement CTA "Prêt à lancer votre projet " */
+.cta-section {
+    margin-top: 80px !important;             /* espace plus large */
+}
+.cta-card .btn-fill {
+    margin-top: 25px !important;
+}
