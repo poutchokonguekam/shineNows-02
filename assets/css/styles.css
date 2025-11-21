@@ -429,3 +429,39 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
 .cta-card .btn-fill {
     margin-top: 25px !important;
 }
+
+/* --- Correction : Card fond métallique sur toute la surface --- */
+.card {
+    background: #d9d8d4 !important;
+    color: #050A14 !important;
+    padding: 35px;
+    min-height: 520px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Image logo centrée */
+.card img {
+    width: 100%;
+    height: 260px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    margin-bottom: 25px;
+}
+
+/* --- Espacement CTA (bouton trop collé) --- */
+.cta-section {
+    margin-top: 100px !important;
+}
+
+.cta-card p {
+    margin-bottom: 20px !important;
+}
+
+.cta-card .btn-fill {
+    margin-top: 25px !important;
+}
