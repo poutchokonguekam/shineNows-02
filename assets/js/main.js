@@ -1,66 +1,89 @@
-// assets/js/main.js - Slider + petits helpers
+// assets/js/main.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('ShineNows JS loaded');
+    console.log("ShineNows JS Loaded"); // Vérification dans la console
 
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    const prevBtn = document.querySelector('.hero-slider .slider-nav.prev');
-    const nextBtn = document.querySelector('.hero-slider .slider-nav.next');
-    const dotsContainer = document.querySelector('.hero-slider .slider-dots');
+    /* =========================================
+       LOGIQUE DU SLIDER HERO (CORRIGÉE)
+       ========================================= */
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.slider-nav.next');
+    const prevBtn = document.querySelector('.slider-nav.prev');
+    const dotsContainer = document.querySelector('.slider-dots');
 
-    if (!slides.length || !dotsContainer) {
-        console.warn('Aucun slider détecté sur cette page.');
-        return;
-    }
+    let currentSlide = 0;
+    let slideInterval;
+    const autoPlayDelay = 5000; // 5 secondes
 
-    let current = 0;
-    const delay = 6000;
-    let timer = null;
-
-    // Crée les dots
-    dotsContainer.innerHTML = '';
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            goTo(index);
-            resetTimer();
+    // Vérification de sécurité : on ne lance le code que si le slider existe
+    if (slides.length > 0 && dotsContainer) {
+        
+        // 1. GÉNÉRATION DES POINTS (DOTS)
+        // On vide le conteneur d'abord pour éviter les doublons
+        dotsContainer.innerHTML = ''; 
+        
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            
+            // Clic sur un point
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetTimer();
+            });
+            dotsContainer.appendChild(dot);
         });
-        dotsContainer.appendChild(dot);
-    });
 
-    const dots = dotsContainer.querySelectorAll('.dot');
+        const dots = document.querySelectorAll('.dot');
 
-    function goTo(index) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
+        // 2. FONCTION PRINCIPALE : CHANGER DE SLIDE
+        function goToSlide(index) {
+            // Enlever la classe active partout
+            slides[currentSlide].classList.remove('active');
+            if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+            
+            // Calcul du nouvel index (gestion de la boucle infinie)
+            currentSlide = (index + slides.length) % slides.length;
+            
+            // Ajouter la classe active au nouveau
+            slides[currentSlide].classList.add('active');
+            if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+        }
 
-        current = (index + slides.length) % slides.length;
+        // 3. NAVIGATION FLÈCHES
+        if(nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Empêche le saut de page
+                goToSlide(currentSlide + 1);
+                resetTimer();
+            });
+        }
 
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-    }
+        if(prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                goToSlide(currentSlide - 1);
+                resetTimer();
+            });
+        }
 
-    function next() {
-        goTo(current + 1);
-    }
+        // 4. AUTO PLAY
+        function startTimer() {
+            slideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, autoPlayDelay);
+        }
 
-    function prev() {
-        goTo(current - 1);
-    }
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
 
-    function startTimer() {
-        timer = setInterval(next, delay);
-    }
-
-    function resetTimer() {
-        clearInterval(timer);
+        // Lancer le slider
         startTimer();
+        console.log("Slider démarré avec " + slides.length + " images.");
+    } else {
+        console.warn("Slider non trouvé sur cette page.");
     }
-
-    if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetTimer(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetTimer(); });
-
-    startTimer();
 });
