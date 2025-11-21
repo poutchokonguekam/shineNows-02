@@ -2,46 +2,68 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/language_init.php';
 require_once __DIR__ . '/app/Classes/Page.php';
 require_once __DIR__ . '/app/Classes/Content.php';
-require_once __DIR__ . '/app/Functions/helpers.php';
-require_once __DIR__ . '/includes/language_init.php';
 
-$uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/', '/');
+// Connexion PDO déjà dispo via config.php -> includes/db_connect.php
+global $pdo;
 
-if ($uri === '') {
-    header('Location: /fr/');
+// Récupération de l'URI
+$uriPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$segments = array_values(array_filter(explode('/', trim($uriPath, '/'))));
+
+$langPrefix = $currentLangPrefix;
+
+// Gestion des cas /, /fr, /en, /de
+if (count($segments) === 0 || (count($segments) === 1 && in_array($segments[0], ['fr', 'en', 'de'], true))) {
+    // Rediriger vers /{lang}/home (lang par défaut = fr)
+    $prefix = $segments[0] ?? 'fr';
+    if (!in_array($prefix, ['fr', 'en', 'de'], true)) {
+        $prefix = 'fr';
+    }
+    header("Location: /{$prefix}/home");
     exit;
 }
 
-$segments = $uri === '' ? [] : explode('/', $uri);
-$languageSegment = $segments[0] ?? 'fr';
-$validSegments = ['fr', 'en', 'de'];
-
-if (!in_array($languageSegment, $validSegments, true)) {
+// Premier segment = langue
+$langPrefix = $segments[0];
+if (!in_array($langPrefix, ['fr', 'en', 'de'], true)) {
+    // langue inconnue → 404
     http_response_code(404);
-    $viewFile = __DIR__ . '/templates/error_404.php';
-    $pageData = ['title' => '404'];
-    $contentData = ['body' => ''];
-    include __DIR__ . '/templates/layout.php';
+    require __DIR__ . '/templates/error_404.php';
     exit;
 }
 
-$slug = $segments[1] ?? '';
-if ($slug === '') {
-    header('Location: /' . $languageSegment . '/home');
+// Slug (deuxième segment)
+$slug = $segments[1] ?? 'home';
+
+$pageModel = new Page($pdo);
+$contentModel = new Content($pdo);
+
+$page = $pageModel->getBySlug($slug);
+
+if (!$page || (isset($page['is_active']) && (int) $page['is_active'] !== 1)) {
+    http_response_code(404);
+    require __DIR__ . '/templates/error_404.php';
     exit;
 }
 
-$page = new Page();
-$content = new Content();
-$pageData = $page->getPage($slug);
-$contentData = $content->getContent($slug);
-$viewFile = __DIR__ . '/templates/' . $slug . '.php';
+// Charger le contenu dynamique
+$pageData = $contentModel->getPageData((int) $page['id'], $currentLangCode);
 
+$pageContent = $pageData['content'] ?? [];
+$seoTitle = $pageData['seo']['title'] ?? ('ShineNows - ' . ucfirst($slug));
+$seoDescription = $pageData['seo']['description'] ?? '';
+$pageData['title'] = $seoTitle;
+
+// Fichier de vue
+$viewFile = __DIR__ . '/templates/' . ($page['template_file'] ?? 'home.php');
 if (!is_file($viewFile)) {
     http_response_code(404);
-    $viewFile = __DIR__ . '/templates/error_404.php';
+    require __DIR__ . '/templates/error_404.php';
+    exit;
 }
 
-include __DIR__ . '/templates/layout.php';
+// Rendre via layout
+require __DIR__ . '/templates/layout.php';
