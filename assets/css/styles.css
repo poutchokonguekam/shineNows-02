@@ -376,32 +376,26 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     margin-top: 20px;
 }
 
-/* --- Portfolio Cards - Version Premium --- */
+/* ===== CARDS TRANSPARENTES + FOND FLOUTÉ (GLASSMORPHISM) ===== */
 .card {
-    padding: 35px;                 /* plus d'espace interne */
-    min-height: 480px;             /* augmente la hauteur totale */
-}
-
-/* Image plus haute + non coupée */
-.card img {
-    height: 260px !important;      /* hauteur augmentée */
-    object-fit: contain !important;/* ne découpe plus les logos */
-    background: #0A0F1C;           /* fond sombre classe */
-    padding: 20px;                 /* espace autour des logos */
-    border-radius: 6px;
-}
-
-/* ===== CARDS TRANSPARENTES ===== */
-.card {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.06) !important; /* ultra transparent */
+    backdrop-filter: blur(14px) !important; /* flou premium */
+    -webkit-backdrop-filter: blur(14px) !important; /* mobile safari fix */
+    border: 1px solid rgba(212, 175, 55, 0.4) !important; /* bordure dorée légère */
+    border-radius: 14px !important;
     padding: 35px;
-    min-height: 460px;
-    border-radius: 10px;
+    min-height: 480px;
+    transition: 0.35s ease;
 }
 
-/* ===== IMAGE MÉTALLIQUE ===== */
+/* Hover luxe */
+.card:hover {
+    border-color: var(--gold-main) !important;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+    transform: translateY(-4px);
+}
+
+/* ===== IMAGE MÉTALLIQUE (inchangé) ===== */
 .card img {
     background: #d9d8d4 !important;
     padding: 25px;
@@ -409,6 +403,15 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     width: 100%;
     height: 260px !important;
     object-fit: contain !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     margin-bottom: 25px;
+}
+
+/* ===== ESPACEMENT SECTION / BOUTON ===== */
+.section-call {
+    margin-top: 70px !important;
+}
+
+.section-call p {
+    margin-bottom: 25px !important;
 }
