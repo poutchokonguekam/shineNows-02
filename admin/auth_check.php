@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/../config.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-if (empty($_SESSION['admin_logged_in'])) {
-    header('Location: /admin/login.php');
+if (empty($_SESSION['admin_id']) || empty($_SESSION['admin_role'])) {
+    header('Location: login.php');
     exit;
 }
