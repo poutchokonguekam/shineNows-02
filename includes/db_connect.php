@@ -4,7 +4,7 @@ declare(strict_types=1);
 $host = '127.0.0.1';
 $db   = 'u262981437_shinenows2db';
 $user = 'u262981437_shinenows2';
-$pass = 'Shinenows2025'; // NE PAS OUBLIER LE "" À LA FIN
+$pass = 'Shinenows2025!'; // mot de passe MySQL réel et définitif
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
