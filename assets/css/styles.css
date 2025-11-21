@@ -391,122 +391,24 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     border-radius: 6px;
 }
 
-/* --- Cards Metallic Premium --- */
-.card {
-    background: #d9d8d4 !important;         /* Fond métallique */
-    color: #050A14 !important;              /* Texte sombre visible */
-    padding: 35px;
-    min-height: 500px;                      /* Plus haut, premium */
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.08);      /* Bordure légère */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.22); /* Effet métal */
-}
-
-/* Image logo non coupée + centrée */
-.card img {
-    height: 260px !important;
-    object-fit: contain !important;
-    background: transparent;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-/* Réajustement des titres */
-.card h3 {
-    color: #050A14;                          /* titre sombre lisible */
-}
-
-/* Réajustement des liens */
-.card-link {
-    color: #D4AF37 !important; /* or premium */
-    text-decoration: underline;
-}
-
-/* Espacement CTA "Prêt à lancer votre projet " */
-.cta-section {
-    margin-top: 80px !important;             /* espace plus large */
-}
-.cta-card .btn-fill {
-    margin-top: 25px !important;
-}
-
-/* --- RESET full background on cards (transparent) --- */
+/* ===== CARDS TRANSPARENTES ===== */
 .card {
     background: transparent !important;
-    color: var(--text-white) !important;
+    border: none !important;
+    box-shadow: none !important;
     padding: 35px;
     min-height: 460px;
     border-radius: 10px;
-    border: none !important;
-    box-shadow: none !important;
 }
 
-/* --- METALLIC BACKGROUND ONLY ON IMAGE AREA --- */
+/* ===== IMAGE MÉTALLIQUE ===== */
 .card img {
-    width: 100%;
-    height: 260px !important;
-    object-fit: contain !important;
-
-    /* Metallic panel */
     background: #d9d8d4 !important;
     padding: 25px;
-    border-radius: 10px;
-
-    /* Premium shadow */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    margin-bottom: 25px;
-}
-
-/* Restore text colors */
-.card h3 {
-    color: var(--text-white) !important;
-}
-.card p {
-    color: var(--text-gray) !important;
-}
-.card-link {
-    color: var(--gold-main) !important;
-    text-decoration: underline;
-}
-
-/* --- Fix spacing above button "Programmer un appel" --- */
-.call-action-block {
-    margin-top: 55px !important;
-    display: block;
-}
-
-/* --- Correction : Card fond métallique sur toute la surface --- */
-.card {
-    background: #d9d8d4 !important;
-    color: #050A14 !important;
-    padding: 35px;
-    min-height: 520px;
-    border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Image logo centrée */
-.card img {
+    border-radius: 12px;
     width: 100%;
     height: 260px !important;
     object-fit: contain !important;
-    background: transparent !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     margin-bottom: 25px;
-}
-
-/* --- Espacement CTA (bouton trop collé) --- */
-.cta-section {
-    margin-top: 100px !important;
-}
-
-.cta-card p {
-    margin-bottom: 20px !important;
-}
-
-.cta-card .btn-fill {
-    margin-top: 25px !important;
 }
