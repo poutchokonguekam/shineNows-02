@@ -89,14 +89,48 @@ if (!isset($currentSlug)) {
 
         <div class="footer-col">
             <h4>Contact</h4>
+
             <ul>
-                <li>WhatsApp : +49 1573 830 6056</li>
-                <li>Email : infos@shinenows.com</li>
+
+                <!-- WhatsApp icon cliquable + numéro non cliquable -->
+                <li style="display:flex; align-items:center; gap:10px;">
+                    <a href="https://wa.me/4915738306056"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="color:#25D366; font-size:1.4rem;">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <span style="color:white; font-size:0.95rem;">+49 1573 830 6056</span>
+                </li>
+
+                <!-- Email NON cliquable -->
+                <li style="margin-top:10px;">
+                    <span style="color:white; font-size:0.95rem;">infos@shinenows.com</span>
+                </li>
+
             </ul>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-behance"></i></a>
+
+            <!-- Réseaux sociaux avec liens réels -->
+            <div class="social-icons" style="margin-top:20px; display:flex; gap:15px;">
+
+                <a href="https://www.facebook.com/shinenows"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i>
+                </a>
+
+                <a href="https://www.instagram.com/shinenows/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.behance.net"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-behance"></i>
+                </a>
+
             </div>
         </div>
     </div>
