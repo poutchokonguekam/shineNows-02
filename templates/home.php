@@ -1,9 +1,9 @@
-<?php // templates/home.php - Accueil ShineNows ?>
+<?php // Page d'accueil ShineNows V5 ?>
 
 <section class="hero-section">
     <div class="hero-slider">
 
-        <!-- SLIDE 1 -->
+        <!-- Slide 1 -->
         <div class="slide active">
             <img src="/assets/images/slide-image-01.webp" alt="Slide 1" class="slide-bg">
             <div class="slide-content">
@@ -23,13 +23,13 @@
             </div>
         </div>
 
-        <!-- SLIDE 2 -->
+        <!-- Slide 2 -->
         <div class="slide">
             <img src="/assets/images/slide-image-02.webp" alt="Slide 2" class="slide-bg">
             <div class="slide-content">
-                <h1><?= htmlspecialchars($pageContent['home_slide2_title'] ?? 'Design & Performance', ENT_QUOTES, 'UTF-8') ?></h1>
+                <h1><?= htmlspecialchars($pageContent['home_slide2_title'] ?? 'Performance & Innovation', ENT_QUOTES, 'UTF-8') ?></h1>
                 <p class="hero-subtitle">
-                    <?= htmlspecialchars($pageContent['home_slide2_text'] ?? 'Sites rapides, modernes, optimisés pour la conversion.', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($pageContent['home_slide2_text'] ?? 'Des sites rapides, modernes et optimisés pour convertir.', ENT_QUOTES, 'UTF-8') ?>
                 </p>
                 <div class="hero-buttons">
                     <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/services" class="btn-fill">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 3 -->
+        <!-- Slide 3 -->
         <div class="slide">
             <img src="/assets/images/slide-image-03.webp" alt="Slide 3" class="slide-bg">
             <div class="slide-content">
@@ -70,7 +70,7 @@
     <div class="grid-3">
         <div class="card">
             <h3 class="text-gold">Sites web & e-commerce</h3>
-            <p>UX/UI, développement, tunnels optimisés pour convertir vos visiteurs en clients.</p>
+            <p>UX/UI, développement full-stack et tunnels optimisés pour la conversion.</p>
         </div>
         <div class="card">
             <h3 class="text-gold">Branding & identité</h3>
@@ -78,7 +78,7 @@
         </div>
         <div class="card">
             <h3 class="text-gold">Growth & performance</h3>
-            <p>SEO, Ads, automatisations CRM pour scaler vos résultats.</p>
+            <p>SEO, campagnes Ads, automatisations CRM pour scaler vos résultats.</p>
         </div>
     </div>
 </section>
@@ -93,19 +93,21 @@
         <div class="card">
             <img src="/assets/images/project-01.webp" alt="ShineNows Agency">
             <h3 class="text-gold">ShineNows Agency</h3>
-            <p>Refonte immersive avec animations subtiles et identité renforcée.</p>
+            <p>Refonte immersive avec animations et identité renforcée.</p>
             <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="card-link">Voir le projet</a>
         </div>
+
         <div class="card">
             <img src="/assets/images/project-02.webp" alt="ShineNows Restaurant">
             <h3 class="text-gold">ShineNows Restaurant</h3>
             <p>Expérience digitale gourmande avec réservation en ligne.</p>
             <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="card-link">Voir le projet</a>
         </div>
+
         <div class="card">
             <img src="/assets/images/project-03.webp" alt="Cabinet Gloria">
             <h3 class="text-gold">Cabinet Gloria</h3>
-            <p>Identité élégante pour un cabinet de conseil moderne.</p>
+            <p>Identité élégante pour un cabinet de conseil.</p>
             <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="card-link">Voir le projet</a>
         </div>
     </div>

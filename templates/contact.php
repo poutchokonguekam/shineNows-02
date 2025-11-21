@@ -1,4 +1,4 @@
-<?php // templates/contact.php ?>
+<?php // Contact ?>
 
 <div class="section-title">
     <span>Contact</span>
@@ -13,7 +13,7 @@
     </div>
     <div class="contact-card">
         <h3 class="text-gold">Devis & projets</h3>
-        <p>Un besoin précis ? Expliquez-nous votre projet.</p>
+        <p>Expliquez-nous votre projet pour une estimation rapide.</p>
         <p><strong>infos@shinenows.com</strong></p>
     </div>
 </div>

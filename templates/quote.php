@@ -1,4 +1,4 @@
-<?php // templates/quote.php ?>
+<?php // Devis ?>
 
 <div class="section-title">
     <span>Devis</span>

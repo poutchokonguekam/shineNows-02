@@ -1,21 +1,21 @@
-<?php // templates/services.php ?>
+<?php // Services ?>
 
 <div class="section-title">
     <span>Services</span>
     <h2>Nos expertises</h2>
-    </div>
+</div>
 
 <div class="grid-3">
     <div class="card">
-        <h3 class="text-gold">Sites web & e-commerce</h3>
-        <p>Sites vitrines, e-commerce, landing pages taillées pour la performance.</p>
+        <h3 class="text-gold">Site vitrine</h3>
+        <p>Sites vitrines modernes, rapides et optimisés pour présenter votre activité.</p>
     </div>
     <div class="card">
-        <h3 class="text-gold">Branding & identité</h3>
-        <p>Logos, identités visuelles, guidelines complètes pour votre marque.</p>
+        <h3 class="text-gold">E-commerce</h3>
+        <p>Boutiques en ligne sécurisées, pensées pour maximiser vos ventes.</p>
     </div>
     <div class="card">
-        <h3 class="text-gold">Marketing & growth</h3>
-        <p>Stratégies d’acquisition, campagnes publicitaires et analytics.</p>
+        <h3 class="text-gold">Sur-mesure</h3>
+        <p>Applications web complexes, back-office personnalisé, intégrations API.</p>
     </div>
 </div>

@@ -1,11 +1,9 @@
 <?php
-// templates/layout.php - Layout global ShineNows CMS
-
+// Layout global ShineNows V5
 $safeLangPrefix = $currentLangPrefix ?? 'fr';
 $safeSeoTitle = $seoTitle ?? 'ShineNows';
 $safeSeoDescription = $seoDescription ?? '';
 
-// Déterminer le slug courant si non fourni
 if (!isset($currentSlug)) {
     $uriPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
     $segments = array_values(array_filter(explode('/', trim($uriPath, '/'))));
@@ -59,9 +57,9 @@ if (!isset($currentSlug)) {
     </nav>
 
     <div class="lang-selector">
-        <a href="/fr/home" class="<?= $safeLangPrefix === 'fr' ? 'active' : '' ?>">FR</a>
-        <a href="/en/home" class="<?= $safeLangPrefix === 'en' ? 'active' : '' ?>">EN</a>
-        <a href="/de/home" class="<?= $safeLangPrefix === 'de' ? 'active' : '' ?>">DE</a>
+        <a href="/fr/home" class="<?= ($safeLangPrefix ?? 'fr') === 'fr' ? 'active' : '' ?>">FR</a>
+        <a href="/en/home" class="<?= ($safeLangPrefix ?? 'fr') === 'en' ? 'active' : '' ?>">EN</a>
+        <a href="/de/home" class="<?= ($safeLangPrefix ?? 'fr') === 'de' ? 'active' : '' ?>">DE</a>
     </div>
 </header>
 
@@ -71,7 +69,6 @@ if (!isset($currentSlug)) {
 
 <footer>
     <div class="footer-grid">
-
         <div class="footer-col">
             <img src="/assets/images/shineNews-logo.webp" alt="ShineNows" class="footer-logo">
             <p>Agence digitale premium dédiée aux marques ambitieuses.</p>
@@ -100,7 +97,6 @@ if (!isset($currentSlug)) {
                 <a href="#"><i class="fab fa-behance"></i></a>
             </div>
         </div>
-
     </div>
 
     <div class="copyright">
