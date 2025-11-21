@@ -70,7 +70,9 @@ if (!isset($currentSlug)) {
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
-            <img src="/assets/images/shineNews-logo.webp" alt="ShineNows" class="footer-logo">
+            <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/home">
+                <img src="/assets/images/shineNews-logo.webp" alt="ShineNows" class="footer-logo">
+            </a>
             <p>Agence digitale premium dédiée aux marques ambitieuses.</p>
         </div>
 

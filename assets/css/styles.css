@@ -363,3 +363,30 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     background: #E8C252;
     transform: translateY(-2px);
 }
+
+/* --- Fix espace boutons dans les slides --- */
+.hero-buttons {
+    margin-top: 28px;
+}
+
+/* Fix espace entre texte et boutons */
+.cta-card .btn-fill,
+.slide-content .btn-fill,
+.slide-content .btn-gold {
+    margin-top: 20px;
+}
+
+/* --- Portfolio Cards - Version Premium --- */
+.card {
+    padding: 35px;                 /* plus d'espace interne */
+    min-height: 480px;             /* augmente la hauteur totale */
+}
+
+/* Image plus haute + non coupée */
+.card img {
+    height: 260px !important;      /* hauteur augmentée */
+    object-fit: contain !important;/* ne découpe plus les logos */
+    background: #0A0F1C;           /* fond sombre classe */
+    padding: 20px;                 /* espace autour des logos */
+    border-radius: 6px;
+}
