@@ -1,23 +1,22 @@
-<?php
-// templates/home.php - page d'accueil ShineNows avec hero slider + sections
-$safeLangPrefix = $currentLangPrefix ?? 'fr';
-?>
+<?php // templates/home.php ?>
+
 <section class="hero-section">
     <div class="hero-slider">
+
         <!-- SLIDE 1 -->
         <div class="slide active">
-            <img src="/assets/images/slide-image-01.webp" alt="Slide 1" class="slide-bg">
+            <img src="/assets/images/slide-image-01.webp" class="slide-bg" alt="Slide 1">
             <div class="slide-content">
                 <p class="hero-kicker">SHINENOWS STUDIO</p>
-                <h1><?= htmlspecialchars($pageContent['home_hero_title'] ?? 'Bienvenue sur ShineNows', ENT_QUOTES, 'UTF-8') ?></h1>
+                <h1><?= htmlspecialchars($pageContent['home_hero_title'] ?? 'Boostez votre marque', ENT_QUOTES, 'UTF-8') ?></h1>
                 <p class="hero-subtitle">
-                    <?= htmlspecialchars($pageContent['home_hero_text'] ?? 'Découvrez ShineNows, votre partenaire digital.', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($pageContent['home_hero_text'] ?? 'Solutions digitales premium pour entreprises ambitieuses.', ENT_QUOTES, 'UTF-8') ?>
                 </p>
                 <div class="hero-buttons">
-                    <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
+                    <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
                         <?= htmlspecialchars($pageContent['home_hero_cta_primary'] ?? 'Demander un devis', ENT_QUOTES, 'UTF-8') ?>
                     </a>
-                    <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/portfolio" class="btn-outline">
+                    <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="btn-outline">
                         <?= htmlspecialchars($pageContent['home_hero_cta_secondary'] ?? 'Voir nos réalisations', ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 </div>
@@ -26,33 +25,29 @@ $safeLangPrefix = $currentLangPrefix ?? 'fr';
 
         <!-- SLIDE 2 -->
         <div class="slide">
-            <img src="/assets/images/slide-image-02.webp" alt="Slide 2" class="slide-bg">
+            <img src="/assets/images/slide-image-02.webp" class="slide-bg" alt="Slide 2">
             <div class="slide-content">
-                <h1><?= htmlspecialchars($pageContent['home_slide2_title'] ?? 'Performance & Innovation', ENT_QUOTES, 'UTF-8') ?></h1>
+                <h1><?= htmlspecialchars($pageContent['home_slide2_title'] ?? 'Design & Performance', ENT_QUOTES, 'UTF-8') ?></h1>
                 <p class="hero-subtitle">
-                    <?= htmlspecialchars($pageContent['home_slide2_text'] ?? 'Boostez votre chiffre d’affaires avec le e-commerce premium.', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($pageContent['home_slide2_text'] ?? 'Des sites rapides, modernes, pensés pour convertir.', ENT_QUOTES, 'UTF-8') ?>
                 </p>
-                <div class="hero-buttons">
-                    <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/services" class="btn-fill">
-                        <?= htmlspecialchars($pageContent['home_slide2_cta'] ?? 'Voir nos services', ENT_QUOTES, 'UTF-8') ?>
-                    </a>
-                </div>
+                <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/services" class="btn-fill">
+                    <?= htmlspecialchars($pageContent['home_slide2_cta'] ?? 'Voir nos services', ENT_QUOTES, 'UTF-8') ?>
+                </a>
             </div>
         </div>
 
         <!-- SLIDE 3 -->
         <div class="slide">
-            <img src="/assets/images/slide-image-03.webp" alt="Slide 3" class="slide-bg">
+            <img src="/assets/images/slide-image-03.webp" class="slide-bg" alt="Slide 3">
             <div class="slide-content">
                 <h1><?= htmlspecialchars($pageContent['home_slide3_title'] ?? 'Créativité & Technologie', ENT_QUOTES, 'UTF-8') ?></h1>
                 <p class="hero-subtitle">
-                    <?= htmlspecialchars($pageContent['home_slide3_text'] ?? 'Des solutions digitales haut de gamme pour votre marque.', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($pageContent['home_slide3_text'] ?? 'Nous construisons l’avenir de votre marque.', ENT_QUOTES, 'UTF-8') ?>
                 </p>
-                <div class="hero-buttons">
-                    <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
-                        <?= htmlspecialchars($pageContent['home_slide3_cta'] ?? 'Programmer un appel', ENT_QUOTES, 'UTF-8') ?>
-                    </a>
-                </div>
+                <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
+                    <?= htmlspecialchars($pageContent['home_slide3_cta'] ?? 'Programmer un appel', ENT_QUOTES, 'UTF-8') ?>
+                </a>
             </div>
         </div>
 
@@ -62,72 +57,83 @@ $safeLangPrefix = $currentLangPrefix ?? 'fr';
     </div>
 </section>
 
+
+<!---------------------- SECTION SERVICES ------------------------>
+
 <section class="services-section">
     <div class="section-title">
-        <span><?= htmlspecialchars($pageContent['home_services_kicker'] ?? 'Services premium', ENT_QUOTES, 'UTF-8') ?></span>
-        <h2><?= htmlspecialchars($pageContent['home_services_title'] ?? 'Nos expertises digitales', ENT_QUOTES, 'UTF-8') ?></h2>
+        <span>Services premium</span>
+        <h2>Nos expertises digitales</h2>
     </div>
+
     <div class="grid-3">
+
         <div class="card">
-            <h3 class="text-gold"><?= htmlspecialchars($pageContent['home_services_card1_title'] ?? 'Sites web & e-commerce', ENT_QUOTES, 'UTF-8') ?></h3>
-            <p><?= htmlspecialchars($pageContent['home_services_card1_text'] ?? 'UX/UI, développement full stack, performance.', ENT_QUOTES, 'UTF-8') ?></p>
+            <h3 class="text-gold">Sites web & e-commerce</h3>
+            <p>UX/UI, dev full-stack, conversions, tunnel optimisé.</p>
         </div>
+
         <div class="card">
-            <h3 class="text-gold"><?= htmlspecialchars($pageContent['home_services_card2_title'] ?? 'Branding & identité', ENT_QUOTES, 'UTF-8') ?></h3>
-            <p><?= htmlspecialchars($pageContent['home_services_card2_text'] ?? 'Chartes premium, motion graphics, guidelines.', ENT_QUOTES, 'UTF-8') ?></p>
+            <h3 class="text-gold">Branding & Identité</h3>
+            <p>Identité visuelle moderne, palette couleurs, logos premium.</p>
         </div>
+
         <div class="card">
-            <h3 class="text-gold"><?= htmlspecialchars($pageContent['home_services_card3_title'] ?? 'Growth & performance', ENT_QUOTES, 'UTF-8') ?></h3>
-            <p><?= htmlspecialchars($pageContent['home_services_card3_text'] ?? 'SEO, campagnes ads, automatisations CRM.', ENT_QUOTES, 'UTF-8') ?></p>
+            <h3 class="text-gold">Growth & Performance</h3>
+            <p>SEO, Ads Meta/Google, automations CRM.</p>
         </div>
+
     </div>
 </section>
+
+
+<!---------------------- SECTION PORTFOLIO ------------------------>
 
 <section class="portfolio-section">
     <div class="section-title section-title-inline">
         <div>
-            <span><?= htmlspecialchars($pageContent['home_portfolio_kicker'] ?? 'Sélection', ENT_QUOTES, 'UTF-8') ?></span>
-            <h2><?= htmlspecialchars($pageContent['home_portfolio_title'] ?? 'Nos réalisations récentes', ENT_QUOTES, 'UTF-8') ?></h2>
+            <span>Sélection</span>
+            <h2>Nos réalisations récentes</h2>
         </div>
-        <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">
-            <?= htmlspecialchars($pageContent['home_portfolio_link_all'] ?? 'Voir toutes les réalisations →', ENT_QUOTES, 'UTF-8') ?>
+
+        <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">
+            Voir toutes les réalisations →
         </a>
     </div>
 
     <div class="grid-3">
+
         <div class="card">
-            <img src="/assets/images/project-01.webp" alt="ShineNows Agency">
+            <img src="/assets/images/project-01.webp" alt="">
             <h3 class="text-gold">ShineNows Agency</h3>
-            <p>Refonte immersive avec animation 3D légère.</p>
-            <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">
-                <?= htmlspecialchars($pageContent['home_portfolio_item1_cta'] ?? 'Voir le projet', ENT_QUOTES, 'UTF-8') ?>
-            </a>
+            <p>Refonte immersive avec animation 3D.</p>
+            <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">Voir le projet</a>
         </div>
+
         <div class="card">
-            <img src="/assets/images/project-02.webp" alt="ShineNows Restaurant">
+            <img src="/assets/images/project-02.webp" alt="">
             <h3 class="text-gold">ShineNows Restaurant</h3>
-            <p>Site gourmand avec réservation en ligne.</p>
-            <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">
-                <?= htmlspecialchars($pageContent['home_portfolio_item2_cta'] ?? 'Voir le projet', ENT_QUOTES, 'UTF-8') ?>
-            </a>
+            <p>Site gourmand avec réservation.</p>
+            <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">Voir le projet</a>
         </div>
+
         <div class="card">
-            <img src="/assets/images/project-03.webp" alt="Cabinet Gloria">
+            <img src="/assets/images/project-03.webp" alt="">
             <h3 class="text-gold">Cabinet Gloria</h3>
             <p>Identité élégante pour cabinet de conseil.</p>
-            <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">
-                <?= htmlspecialchars($pageContent['home_portfolio_item3_cta'] ?? 'Voir le projet', ENT_QUOTES, 'UTF-8') ?>
-            </a>
+            <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/portfolio" class="link-inline">Voir le projet</a>
         </div>
+
     </div>
 </section>
 
+
+<!---------------------- SECTION CTA ------------------------>
+
 <section class="cta-section">
     <div class="cta-card">
-        <h3><?= htmlspecialchars($pageContent['home_cta_title'] ?? 'Prêt à lancer votre projet ?', ENT_QUOTES, 'UTF-8') ?></h3>
-        <p><?= htmlspecialchars($pageContent['home_cta_text'] ?? 'Discutons de votre prochaine expérience digitale avec l’équipe ShineNows.', ENT_QUOTES, 'UTF-8') ?></p>
-        <a href="/<?= htmlspecialchars($safeLangPrefix, ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
-            <?= htmlspecialchars($pageContent['home_cta_button'] ?? 'Programmer un appel', ENT_QUOTES, 'UTF-8') ?>
-        </a>
+        <h3>Prêt à lancer votre projet </h3>
+        <p>Construisons ensemble votre prochaine expérience digitale.</p>
+        <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">Programmer un appel</a>
     </div>
 </section>
