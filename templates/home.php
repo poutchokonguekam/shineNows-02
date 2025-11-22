@@ -115,10 +115,12 @@
 
 <section class="cta-section">
     <div class="cta-card">
-        <h3><?= htmlspecialchars($pageContent['home_cta_title'] ?? 'Prêt à lancer votre projet ?', ENT_QUOTES, 'UTF-8') ?></h3>
-        <p><?= htmlspecialchars($pageContent['home_cta_text'] ?? 'Discutons de votre prochaine expérience digitale avec l’équipe ShineNows.', ENT_QUOTES, 'UTF-8') ?></p>
-        <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
-            <?= htmlspecialchars($pageContent['home_cta_button'] ?? 'Programmer un appel', ENT_QUOTES, 'UTF-8') ?>
-        </a>
+        <div class="home-call-block">
+            <h3><?= htmlspecialchars($pageContent['home_cta_title'] ?? 'Prêt à lancer votre projet ?', ENT_QUOTES, 'UTF-8') ?></h3>
+            <p><?= htmlspecialchars($pageContent['home_cta_text'] ?? 'Discutons de votre prochaine expérience digitale avec l’équipe ShineNows.', ENT_QUOTES, 'UTF-8') ?></p>
+            <a href="/<?= htmlspecialchars($currentLangPrefix ?? 'fr', ENT_QUOTES, 'UTF-8') ?>/quote" class="btn-fill">
+                <?= htmlspecialchars($pageContent['home_cta_button'] ?? 'Programmer un appel', ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        </div>
     </div>
 </section>

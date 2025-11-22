@@ -425,3 +425,22 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
 .section-call .btn-gold {
     margin-top: 10px !important; /* sécurité anti-collage */
 }
+
+/* ===== ESPACEMENT BLOC CTA "PROGRAMMER UN APPEL" ===== */
+.home-call-block {
+    margin-top: 80px !important;     /* espace avec les cartes */
+    margin-bottom: 60px !important;  /* respiration avant le footer */
+}
+
+.home-call-block h3,
+.home-call-block h2 {
+    margin-bottom: 15px !important;
+}
+
+.home-call-block p {
+    margin-bottom: 35px !important;  /* espace parfait avec le bouton */
+}
+
+.home-call-block .btn-fill {
+    margin-top: 10px !important;
+}
