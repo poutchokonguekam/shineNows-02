@@ -407,11 +407,21 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     margin-bottom: 25px;
 }
 
-/* ===== ESPACEMENT SECTION / BOUTON ===== */
+/* ===== ESPACEMENT SECTION "PROGRAMMER UN APPEL" ===== */
 .section-call {
-    margin-top: 70px !important;
+    margin-top: 80px !important;   /* espace au-dessus du bloc */
+}
+
+.section-call h3,
+.section-call h2 {
+    margin-bottom: 18px !important;
 }
 
 .section-call p {
-    margin-bottom: 25px !important;
+    margin-bottom: 35px !important; /* espace entre le texte et le bouton */
+}
+
+.section-call .btn-fill, 
+.section-call .btn-gold {
+    margin-top: 10px !important; /* sécurité anti-collage */
 }
