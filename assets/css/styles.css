@@ -538,6 +538,197 @@ footer { background: #02050a; border-top: 1px solid rgba(255,255,255,0.1); paddi
     .testimonial-nav.next { right: -40px; }
 }
 
+/* ================================
+   SECTION AVIS / SATISFACTION
+   ================================ */
+
+.sn-testimonials-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 5% 120px;
+    margin-top: 40px;
+}
+
+/* Calque de fond : gradient + possibilité d'image/video */
+.sn-testimonials-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at top left, rgba(212, 175, 55, 0.15), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.12), transparent 55%),
+        rgba(3, 7, 15, 0.95);
+    backdrop-filter: blur(4px);
+    /* Pour plus tard : image ou vidéo
+       Exemple image :
+       background-image: url('/assets/images/testimonials-bg.jpg');
+       background-size: cover;
+       background-position: center;
+    */
+}
+
+/* Contenu au-dessus du fond */
+.sn-testimonials-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.sn-section-kicker {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-main);
+    margin-bottom: 12px;
+}
+
+.sn-section-title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+}
+
+/* Wrapper flèches + card */
+.sn-testimonial-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Card principale */
+.sn-testimonial-card {
+    flex: 0 1 700px;
+    padding: 34px 40px;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        rgba(5, 10, 20, 0.92),
+        rgba(10, 16, 32, 0.96)
+    );
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    text-align: center;
+    min-height: 180px;
+}
+
+.sn-testimonial-stars {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+}
+
+.sn-testimonial-stars span {
+    color: var(--gold-main);
+}
+
+.sn-testimonial-text {
+    font-size: 0.98rem;
+    color: var(--text-gray);
+    margin-bottom: 18px;
+    font-style: italic;
+}
+
+.sn-testimonial-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+/* Flèches */
+.sn-testimonial-arrow {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.sn-testimonial-arrow span {
+    font-size: 1.4rem;
+    line-height: 1;
+    transform: translateY(-1px);
+}
+
+.sn-testimonial-arrow:hover {
+    border-color: var(--gold-main);
+    color: var(--gold-main);
+    background: rgba(212, 175, 55, 0.06);
+}
+
+.sn-testimonial-arrow--prev {
+    margin-right: 8px;
+}
+
+.sn-testimonial-arrow--next {
+    margin-left: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sn-testimonials-section {
+        padding: 70px 5% 80px;
+    }
+
+    .sn-section-title {
+        font-size: 1.9rem;
+    }
+
+    .sn-testimonial-wrapper {
+        gap: 12px;
+    }
+
+    .sn-testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .sn-testimonial-arrow {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sn-testimonial-wrapper {
+        gap: 8px;
+    }
+
+    .sn-testimonial-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .sn-testimonial-arrow--prev {
+        left: -4px;
+    }
+
+    .sn-testimonial-arrow--next {
+        right: -4px;
+    }
+
+    .sn-testimonial-card {
+        padding: 22px 16px;
+    }
+}
+
 /* ===== SECTION AVIS / REVIEWS ===== */
 .reviews-section {
     padding: 100px 5% 80px;

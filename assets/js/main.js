@@ -86,34 +86,88 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn("Slider non trouvé sur cette page.");
     }
-
 });
 
-});
+// =====================================
+// Slider Avis / Satisfaction (Home)
+// =====================================
+(function () {
+    const cardText = document.querySelector('[data-testimonial-text]');
+    const cardName = document.querySelector('[data-testimonial-name]');
+    const cardStars = document.querySelector('[data-testimonial-stars]');
+    const btnPrev = document.querySelector('.sn-testimonial-arrow--prev');
+    const btnNext = document.querySelector('.sn-testimonial-arrow--next');
 
-/* =====================
-   SLIDER DES AVIS
-===================== */
-let testimonialIndex = 0;
-const testimonialSlides = document.querySelectorAll(".testimonial-slide");
-const prevBtn = document.querySelector(".testimonial-nav.prev");
-const nextBtn = document.querySelector(".testimonial-nav.next");
+    if (!cardText || !cardName || !cardStars || !btnPrev || !btnNext) {
+        return;
+    }
 
-function showTestimonial(n) {
-    testimonialSlides.forEach(slide => slide.classList.remove("active"));
-    testimonialSlides[n].classList.add("active");
-}
+    // Avis statiques pour l'instant (1 → 4 → 1)
+    const testimonials = [
+        {
+            rating: 5,
+            text: '« Service rapide et professionnel. Mon site est magnifique ! »',
+            name: 'Jean M.'
+        },
+        {
+            rating: 5,
+            text: '« Très satisfaite du résultat. Équipe à l’écoute et efficace. »',
+            name: 'Fatou K.'
+        },
+        {
+            rating: 5,
+            text: '« Travail sérieux, communication fluide. Je recommande ShineNows ! »',
+            name: 'Michael D.'
+        },
+        {
+            rating: 5,
+            text: '« Le meilleur service digital que j’ai testé. Bravo l’équipe ! »',
+            name: 'Sophie L.'
+        }
+    ];
 
-if (testimonialSlides.length && prevBtn && nextBtn) {
-    showTestimonial(testimonialIndex);
+    let currentIndex = 0;
+    let isAnimating = false;
 
-    nextBtn.addEventListener("click", () => {
-        testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
-        showTestimonial(testimonialIndex);
-    });
+    function renderTestimonial(index) {
+        const t = testimonials[index];
+        if (!t) return;
 
-    prevBtn.addEventListener("click", () => {
-        testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
-        showTestimonial(testimonialIndex);
-    });
-}
+        // étoiles
+        const fullStars = '★'.repeat(t.rating);
+        const emptyStars = t.rating < 5 ? '☆'.repeat(5 - t.rating) : '';
+        cardStars.innerHTML = `<span>${fullStars}${emptyStars}</span>`;
+
+        cardText.textContent = t.text;
+        cardName.textContent = t.name;
+    }
+
+    function goTo(delta) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const card = cardText.closest('.sn-testimonial-card');
+        if (card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(6px)';
+        }
+
+        setTimeout(() => {
+            currentIndex = (currentIndex + delta + testimonials.length) % testimonials.length;
+            renderTestimonial(currentIndex);
+
+            if (card) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+
+            setTimeout(() => { isAnimating = false; }, 150);
+        }, 150);
+    }
+
+    btnPrev.addEventListener('click', () => goTo(-1));
+    btnNext.addEventListener('click', () => goTo(1));
+
+    // Init
+    renderTestimonial(currentIndex);
+})();

@@ -125,38 +125,38 @@
     </div>
 </section>
 
-<!-- ==== SECTION AVIS ==== -->
-<section class="testimonials-section">
-    <h3 class="testimonials-subtitle">SATISFACTION</h3>
-    <h2 class="testimonials-title">Ils nous font confiance</h2>
+<!-- Section Avis / Satisfaction -->
+<section class="sn-testimonials-section" id="avis">
+    <div class="sn-testimonials-bg"></div>
 
-    <div class="testimonial-container">
-        <button class="testimonial-nav prev">&#10094;</button>
+    <div class="sn-testimonials-inner">
+        <p class="sn-section-kicker">
+            <?= htmlspecialchars($translations['home_satisfaction_kicker'] ?? 'SATISFACTION', ENT_QUOTES, 'UTF-8'); ?>
+        </p>
+        <h2 class="sn-section-title">
+            <?= htmlspecialchars($translations['home_satisfaction_title'] ?? 'Ils nous font confiance', ENT_QUOTES, 'UTF-8'); ?>
+        </h2>
 
-        <div class="testimonial-slide">
-            <span class="stars">★★★★★</span>
-            <p class="testimonial-text">« Service rapide et professionnel. Le site est magnifique ! »</p>
-            <p class="testimonial-author">Jean M.</p>
+        <div class="sn-testimonial-wrapper">
+            <button class="sn-testimonial-arrow sn-testimonial-arrow--prev" type="button" aria-label="Avis précédent">
+                <span>&lsaquo;</span>
+            </button>
+
+            <article class="sn-testimonial-card">
+                <div class="sn-testimonial-stars" data-testimonial-stars>
+                    <!-- Étoiles remplies via JS -->
+                </div>
+                <p class="sn-testimonial-text" data-testimonial-text>
+                    <!-- Texte rempli via JS -->
+                </p>
+                <p class="sn-testimonial-name" data-testimonial-name>
+                    <!-- Nom rempli via JS -->
+                </p>
+            </article>
+
+            <button class="sn-testimonial-arrow sn-testimonial-arrow--next" type="button" aria-label="Avis suivant">
+                <span>&rsaquo;</span>
+            </button>
         </div>
-
-        <div class="testimonial-slide">
-            <span class="stars">★★★★★</span>
-            <p class="testimonial-text">« Très satisfaite du résultat. Équipe à l'écoute et efficace. »</p>
-            <p class="testimonial-author">Fatou K.</p>
-        </div>
-
-        <div class="testimonial-slide">
-            <span class="stars">★★★★★</span>
-            <p class="testimonial-text">« Travail sérieux, communication parfaite. Je recommande ! »</p>
-            <p class="testimonial-author">Michael D.</p>
-        </div>
-
-        <div class="testimonial-slide">
-            <span class="stars">★★★★★</span>
-            <p class="testimonial-text">« Le meilleur service digital que j’ai testé. Bravo l’équipe ! »</p>
-            <p class="testimonial-author">Sophie L.</p>
-        </div>
-
-        <button class="testimonial-nav next">&#10095;</button>
     </div>
 </section>
