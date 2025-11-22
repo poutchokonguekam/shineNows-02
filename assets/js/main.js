@@ -122,3 +122,30 @@ document.addEventListener('DOMContentLoaded', () => {
         updateReviewsSlider();
     }
 });
+
+/* =====================
+   SLIDER DES AVIS
+===================== */
+let testimonialIndex = 0;
+const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+const prevBtn = document.querySelector(".testimonial-nav.prev");
+const nextBtn = document.querySelector(".testimonial-nav.next");
+
+function showTestimonial(n) {
+    testimonialSlides.forEach(slide => slide.classList.remove("active"));
+    testimonialSlides[n].classList.add("active");
+}
+
+if (testimonialSlides.length && prevBtn && nextBtn) {
+    showTestimonial(testimonialIndex);
+
+    nextBtn.addEventListener("click", () => {
+        testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+        showTestimonial(testimonialIndex);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+        showTestimonial(testimonialIndex);
+    });
+}

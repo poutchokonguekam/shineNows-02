@@ -125,6 +125,42 @@
     </div>
 </section>
 
+<!-- ==== SECTION AVIS ==== -->
+<section class="testimonials-section">
+    <h3 class="testimonials-subtitle">SATISFACTION</h3>
+    <h2 class="testimonials-title">Ils nous font confiance</h2>
+
+    <div class="testimonial-container">
+        <button class="testimonial-nav prev">&#10094;</button>
+
+        <div class="testimonial-slide">
+            <span class="stars">★★★★★</span>
+            <p class="testimonial-text">« Service rapide et professionnel. Le site est magnifique ! »</p>
+            <p class="testimonial-author">Jean M.</p>
+        </div>
+
+        <div class="testimonial-slide">
+            <span class="stars">★★★★★</span>
+            <p class="testimonial-text">« Très satisfaite du résultat. Équipe à l'écoute et efficace. »</p>
+            <p class="testimonial-author">Fatou K.</p>
+        </div>
+
+        <div class="testimonial-slide">
+            <span class="stars">★★★★★</span>
+            <p class="testimonial-text">« Travail sérieux, communication parfaite. Je recommande ! »</p>
+            <p class="testimonial-author">Michael D.</p>
+        </div>
+
+        <div class="testimonial-slide">
+            <span class="stars">★★★★★</span>
+            <p class="testimonial-text">« Le meilleur service digital que j’ai testé. Bravo l’équipe ! »</p>
+            <p class="testimonial-author">Sophie L.</p>
+        </div>
+
+        <button class="testimonial-nav next">&#10095;</button>
+    </div>
+</section>
+
 <section class="reviews-section">
     <div class="page-wrapper reviews-wrapper">
         <div class="section-title">
