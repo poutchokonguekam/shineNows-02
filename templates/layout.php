@@ -126,10 +126,10 @@ if (!isset($currentSlug)) {
                     <i class="fab fa-instagram"></i>
                 </a>
 
-                <a href="https://www.behance.net"
+                <a href="https://wa.me/4915738306056"
                    target="_blank"
                    rel="noopener noreferrer">
-                    <i class="fab fa-behance"></i>
+                    <i class="fab fa-whatsapp"></i>
                 </a>
 
             </div>
