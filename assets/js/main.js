@@ -87,40 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn("Slider non trouvé sur cette page.");
     }
 
-    /* =========================================
-       SLIDER D'AVIS HORIZONTAL
-       ========================================= */
-    const reviewsTrack = document.querySelector('.reviews-track');
-    const reviewCards = reviewsTrack ? Array.from(reviewsTrack.querySelectorAll('.review-card')) : [];
-    const reviewsPrev = document.querySelector('.reviews-prev');
-    const reviewsNext = document.querySelector('.reviews-next');
+});
 
-    if (reviewsTrack && reviewCards.length > 0 && reviewsPrev && reviewsNext) {
-        let reviewIndex = 0;
-
-        function updateReviewsSlider() {
-            const cardWidth = reviewCards[0].getBoundingClientRect().width + 24; // largeur + gap
-            const visibleCount = window.innerWidth <= 900 ? 1 : 2;
-            const maxIndex = Math.max(0, reviewCards.length - visibleCount);
-            if (reviewIndex > maxIndex) reviewIndex = maxIndex;
-            if (reviewIndex < 0) reviewIndex = 0;
-            const offset = -reviewIndex * cardWidth;
-            reviewsTrack.style.transform = `translateX(${offset}px)`;
-        }
-
-        reviewsPrev.addEventListener('click', () => {
-            reviewIndex--;
-            updateReviewsSlider();
-        });
-
-        reviewsNext.addEventListener('click', () => {
-            reviewIndex++;
-            updateReviewsSlider();
-        });
-
-        window.addEventListener('resize', updateReviewsSlider);
-        updateReviewsSlider();
-    }
 });
 
 /* =====================
